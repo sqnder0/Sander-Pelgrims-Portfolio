@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sander Pelgrims | Weather app</title>
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="cityWrapper">
+        <h1 id="city"></h1>
+      </div>
+      <form id="citySearch">
+        <input
+          type="text"
+          id="searchBar"
+          onkeyup=""
+          name="city"
+          placeholder="City..."
+        />
+        <button type="submit" id="search">
+          <img src="./weahter_assets/search.svg" alt="search" />
+        </button>
+      </form>
+      <div id="details">
+        <div id="topRow">
+          <div id="currentWeather">
+            <h2>Current weather</h2>
+            <hr />
+            <div id="currentWeatherMain">
+              <img src="./weahter_assets/icons/01d.svg" alt="weather icon" />
+              <div id="currentTempWrapper">
+                <span id="currentTemp">27°C</span>
+                <span id="currentTitle">Sunny</span>
+                <span id="currentFeelTemp">28°C</span>
+              </div>
+              <div id="currentDetails">
+                <span id="humidity"
+                  ><svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="descriptionText">20%</p>
+                </span>
+                <span id="wind">
+                  <svg
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p class="descriptionText">7km/u</p>
+                </span>
+                <span id="currentUv">
+                  <svg
+                    fill="#000000"
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M13,30H9a2.0027,2.0027,0,0,1-2-2V20H9v8h4V20h2v8A2.0027,2.0027,0,0,1,13,30Z"
+                      transform="translate(0 0)"
+                    />
+                    <polygon
+                      points="25 20 23.25 20 21 29.031 18.792 20 17 20 19.5 30 22.5 30 25 20"
+                    />
+                    <rect x="15" y="2" width="2" height="5" />
+                    <rect
+                      x="21.6675"
+                      y="6.8536"
+                      width="4.958"
+                      height="1.9998"
+                      transform="translate(1.5191 19.3744) rotate(-45)"
+                    />
+                    <rect x="25" y="15" width="5" height="2" />
+                    <rect x="2" y="15" width="5" height="2" />
+                    <rect
+                      x="6.8536"
+                      y="5.3745"
+                      width="1.9998"
+                      height="4.958"
+                      transform="translate(-3.253 7.8535) rotate(-45)"
+                    />
+                    <path
+                      d="M22,17H20V16a4,4,0,0,0-8,0v1H10V16a6,6,0,0,1,12,0Z"
+                      transform="translate(0 0)"
+                    />
+                    <p class="descriptionText">6.7</p>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div id="hourly">
+            <div class="hour">
+              <img src="./weahter_assets/icons/01d.svg" alt="weather icon" />
+              <div class="hourDetails">
+                <p id="time">17u</p>
+                <p id="hourTemp">27 / 29°C</p>
+                <p id="hourDescription">Clear sky</p>
+              </div>
+            </div>
+            <div class="hour">
+              <img src="./weahter_assets/icons/01d.svg" alt="weather icon" />
+              <div class="hourDetails">
+                <p id="time">17u</p>
+                <p id="hourTemp">27 / 29°C</p>
+                <p id="hourDescription">Clear sky</p>
+              </div>
+            </div>
+            <div class="hour">
+              <img src="./weahter_assets/icons/01d.svg" alt="weather icon" />
+              <div class="hourDetails">
+                <p id="time">17u</p>
+                <p id="hourTemp">27 / 29°C</p>
+                <p id="hourDescription">Clear sky</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="daily">
+          <div class="day">
+            <h2 class="dayDate">Monday</h2>
+            <img src="./weahter_assets/icons/09n.svg" alt="weather icon" />
+            <span class="dailyTemp">27/ 29°C</span>
+            <div class="dailyDetail">
+              <span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                    stroke="hsl(0, 0%, 75%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="dailyDetailText">50%</p></span
+              >
+              <span
+                ><svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                >
+                  <path
+                    fill="hsl(0, 0%, 75%)"
+                    fill-rule="evenodd"
+                    d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="dailyDetailText">20km/u</p></span
+              >
+            </div>
+          </div>
+          <div class="day">
+            <h2 class="dayDate">Tuesday</h2>
+            <img src="./weahter_assets/icons/09n.svg" alt="weather icon" />
+            <span class="dailyTemp">27/ 29°C</span>
+            <div class="dailyDetail">
+              <span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                    stroke="hsl(0, 0%, 75%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="dailyDetailText">50%</p></span
+              >
+              <span
+                ><svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                >
+                  <path
+                    fill="hsl(0, 0%, 75%)"
+                    fill-rule="evenodd"
+                    d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="dailyDetailText">20km/u</p></span
+              >
+            </div>
+          </div>
+          <div class="day">
+            <h2 class="dayDate">Wednesday</h2>
+            <img src="./weahter_assets/icons/09n.svg" alt="weather icon" />
+            <span class="dailyTemp">27/ 29°C</span>
+            <div class="dailyDetail">
+              <span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                    stroke="hsl(0, 0%, 75%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="dailyDetailText">50%</p></span
+              >
+              <span
+                ><svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                >
+                  <path
+                    fill="hsl(0, 0%, 75%)"
+                    fill-rule="evenodd"
+                    d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="dailyDetailText">20km/u</p></span
+              >
+            </div>
+          </div>
+          <div class="day">
+            <h2 class="dayDate">Thursday</h2>
+            <img src="./weahter_assets/icons/09n.svg" alt="weather icon" />
+            <span class="dailyTemp">27/ 29°C</span>
+            <div class="dailyDetail">
+              <span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                    stroke="hsl(0, 0%, 75%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="dailyDetailText">50%</p></span
+              >
+              <span
+                ><svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                >
+                  <path
+                    fill="hsl(0, 0%, 75%)"
+                    fill-rule="evenodd"
+                    d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="dailyDetailText">20km/u</p></span
+              >
+            </div>
+          </div>
+          <div class="day">
+            <h2 class="dayDate">Friday</h2>
+            <img src="./weahter_assets/icons/09n.svg" alt="weather icon" />
+            <span class="dailyTemp">27/ 29°C</span>
+            <div class="dailyDetail">
+              <span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 13.8C19 17.7764 15.866 21 12 21C8.13401 21 5 17.7764 5 13.8C5 12.8452 5.18069 11.9338 5.50883 11.1C6.54726 8.46135 12 3 12 3C12 3 17.4527 8.46135 18.4912 11.1C18.8193 11.9338 19 12.8452 19 13.8Z"
+                    stroke="hsl(0, 0%, 75%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="dailyDetailText">50%</p></span
+              >
+              <span
+                ><svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                >
+                  <path
+                    fill="hsl(0, 0%, 75%)"
+                    fill-rule="evenodd"
+                    d="M8 1a.75.75 0 01.691.46l5.25 12.5a.75.75 0 01-1.027.96L8 12.457 3.086 14.92a.75.75 0 01-1.027-.96l5.25-12.5A.75.75 0 018 1zM4.227 12.67l3.437-1.722a.75.75 0 01.672 0l3.437 1.723L8 3.687 4.227 12.67z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="dailyDetailText">20km/u</p></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="weather.js"></script>
+</html>
